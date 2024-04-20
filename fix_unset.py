@@ -11,7 +11,7 @@ output = result.stdout.decode('utf-8')
 lines = output.split('\n')
 
 # 正则表达式，用于匹配变量名
-pattern = re.compile(r"'(\w+)' is defined but never used")
+pattern = re.compile(r"'(\w+)' is (defined but never used|assigned a value but never used)")
 
 for line in lines:
     if '(unused-imports/no-unused-vars)' in line:
